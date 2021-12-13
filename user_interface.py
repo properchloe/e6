@@ -12,7 +12,6 @@ def get_command():
 
 
 def display_table(display_data):
-    cafe_data.load_cafe_data()
     with sqlite3.connect(display_data) as s3:
         result = s3.execute("SELECT store_name, kind, volume FROM stores")
         for store in result:

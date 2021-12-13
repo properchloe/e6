@@ -11,5 +11,8 @@ while user_cmd != "quit":
     elif user_cmd == 'list tables':
         cafe_data.get_stores()
         ui.display_table('data/cafe.sqlite3')
+    elif user_cmd == 'list recent types':
+        cafe_data.get_stores()
+        ui.display_table_2('data/cafe.sqlite3')
     elif not user_cmd:
         print("Invalid command. Please try again.")

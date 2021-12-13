@@ -8,7 +8,7 @@ while user_cmd != "quit":
     user_cmd = ui.get_command()
     if user_cmd == 'quit':
         sys.exit("You chose to quit the program.")
-    elif user_cmd == 'list cafes':
+    elif user_cmd == 'list tables':
         cafe_data.get_stores()
         ui.display_table('data/cafe.sqlite3')
     elif not user_cmd:

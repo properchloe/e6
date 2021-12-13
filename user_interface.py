@@ -1,4 +1,5 @@
 import cafe_data
+import sqlite3
 
 
 def get_command():
@@ -11,4 +12,8 @@ def get_command():
 
 
 def display_table(display_data):
-    print("YAY")
+    cafe_data.load_cafe_data()
+    with sqlite3.connect(display_data) as s3:
+        result = s3.execute("SELECT store_name, kind, volume FROM stores")
+        for store in result:
+            print(f"we have {store[0]} which is a {store[1]} that does ${store[2]:0.2f} per day")

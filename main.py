@@ -1,16 +1,15 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import user_interface as ui
+import cafe_data
+import sys
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+user_cmd = ""
+while user_cmd != "quit":
+    user_cmd = ui.get_command()
+    if user_cmd == 'quit':
+        sys.exit("You chose to quit the program.")
+    elif user_cmd == 'list cafes':
+        cafe_data.get_stores()
+        ui.display_table('data/cafe.sqlite3')
+    elif not user_cmd:
+        print("Invalid command. Please try again.")

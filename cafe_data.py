@@ -92,5 +92,9 @@ def load_cafe_data():
                     done = True
 
 
+def get_stores():
+    return "something simple"
+
+
 if __name__ == "__main__":
     load_cafe_data()
